@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <h1>My Goals</h1>
+            <ul *ngFor="let goal of goals;let i=index"> <!-- The directive goes through the goals array and assigns each item in the array the variable goal-->
+              <li appStrikethrough>{{goal.id}}:{{goal.name}} due on {{goal.completeDate | date | uppercase}}</li>
+        
+              <button (click)="showDescription(i)">Description</button>
+              
+          <!-- <app-goal-detail *ngIf="goal.showDescription" [goal]="goal" (isComplete) = 'completeGoal($event,i)'></app-goal-detail> -->
+          <!-- <app-goal-detail *ngIf="goal.showDescription" [goal]="goal" (isComplete) = 'completeGo(i)'></app-goal-detail> -->
+          <app-goal-detail *ngIf="goal.showDescription" [goal]="goal" (isComplete) = 'goalDelete($event,i)'></app-goal-detail>
+        
+            </ul>
+
+        </div>
+        <div class="col-md-6">
+<app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
+        </div>
+    </div>  
+  
+
+    <p *ngIf='goals.length > 5'>Your goals are too many!!!Strive hard to achieve them</p>
+  
+  </div>

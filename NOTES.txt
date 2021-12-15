@@ -1,0 +1,53 @@
+Jasmine and proctactor are used for tesing in e2e.
+app component is a root component 
+app module -root module that tells angular how to assemle the application
+styles.css - for global css
+assets folder - store images
+
+    app.component.css - This will hold CSS styles that can only be applied to the app component
+    app.component.html - Contains the HTML template code for the App Component.
+    app.component.specs.ts - This file will have all the test code for the app component
+    app.component.ts - This is the entry point for the app component. i.e contains the logic code 
+
+
+The Component annotation( The decorator class)e.g 
+
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+
+The Component definition class( the export class) e.g 
+    export class AppComponent {
+    title = 'Goals';
+    }
+ *ngFor="let goal of goals" - The directive goes through the goals array and assigns each item in the array the variable goal.
+
+ A class is an extensible program-code-template for creating objects by providing initial values for variables and member functions or methods.
+ we use ( ng g class ___ )
+
+.map - for editing or toggling
+.filter - for deleting
+
+ Attribute Directives - determines appearance and behavior of DOM elements e.g ngStyle,ngClass
+Structural Directives- determines layout i.e create and/or destroy DOM elements e.g *ngFor,*ngIf,*ngSwitch
+
+we can also have our own directive (CUSTOM DIRECTIVES) - we generate using  ng g directive <directive-name>
+
+Alternatives to Boostrap inclucde:
+    ->Material UI, Materialize, Foundation
+    To add boostrap,jQuery as well as popper use the command ( npm install --save bootstrap popper ) then add
+    @import "~bootstrap/dist/css/bootstrap.css" on styles.css a global css file
+
+    Custom Css in Angular
+    Application Level Styles - on styles.css
+Component Level Styles - inside component
+
+
+css order on links
+:link
+:visited
+:hover
+:focus
+:active
